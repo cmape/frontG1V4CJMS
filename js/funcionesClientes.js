@@ -2,7 +2,7 @@
 
 function getClientes(){
     $.ajax({
-        url:"http://localhost:8080/api/Client/all",
+        url:"http://150.230.78.93:8080/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -23,7 +23,7 @@ function postClientes(){
     };
     
     $.ajax({
-        url:"http://localhost:8080/api/Client/save",
+        url:"http://150.230.78.93:8080/api/Client/save",
         type:"POST",
         datatype:"JSON",
         contentType: "application/json; charset=utf-8",
@@ -49,7 +49,7 @@ function putClientes(idBotonActualizar){
         };
 
         $.ajax({
-            url:"http://localhost:8080/api/Client/update",
+            url:"http://150.230.78.93:8080/api/Client/update",
             type:"PUT",
             datatype:"JSON",
             contentType: "application/json",
@@ -67,7 +67,7 @@ function deleteClientes(idBoton){
         id:idBoton
     };
     $.ajax({
-        url:"http://localhost:8080/api/Client/"+idBoton,
+        url:"http://150.230.78.93:8080/api/Client/"+idBoton,
         type:"DELETE",
         datatype:"JSON",
         data:JSON.stringify(myData),

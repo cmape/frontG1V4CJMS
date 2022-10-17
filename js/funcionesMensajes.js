@@ -2,7 +2,7 @@
 
 function getMensajes(){
     $.ajax({
-        url:"http://localhost:8080/api/Message/all",
+        url:"http://150.230.78.93:8080/api/Message/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -21,7 +21,7 @@ function postMensajes(){
     console.log(cajas);
     
     $.ajax({
-        url:"http://localhost:8080/api/Message/save",
+        url:"http://150.230.78.93:8080/api/Message/save",
         type:"POST",
         datatype:"JSON",
         contentType: "application/json; charset=utf-8",
@@ -47,7 +47,7 @@ function putMensajes(idBotonActualizar){
         };
 
         $.ajax({
-            url:"http://localhost:8080/api/Message/update",
+            url:"http://150.230.78.93:8080/api/Message/update",
             type:"PUT",
             datatype:"JSON",
             contentType: "application/json",
@@ -64,7 +64,7 @@ function deleteMensajes(idBoton){
         id:idBoton
     };
     $.ajax({
-        url:"http://localhost:8080/api/Message/"+idBoton,
+        url:"http://150.230.78.93:8080/api/Message/"+idBoton,
         type:"DELETE",
         datatype:"JSON",
         data:JSON.stringify(myData),
@@ -80,7 +80,7 @@ function deleteMensajes(idBoton){
 
 function getMensajes_Car(){
     $.ajax({
-        url:"http://localhost:8080/api/Car/all",
+        url:"http://150.230.78.93:8080/api/Car/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -96,7 +96,7 @@ function getMensajes_Car(){
 
 function getMensajes_Client(){
     $.ajax({
-        url:"http://localhost:8080/api/Client/all",
+        url:"http://150.230.78.93:8080/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){

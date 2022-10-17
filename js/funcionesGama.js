@@ -2,7 +2,7 @@
 
 function getGama(){
     $.ajax({
-        url:"http://localhost:8080/api/Gama/all",
+        url:"http://150.230.78.93:8080/api/Gama/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -24,7 +24,7 @@ function postGama(){
     };
     
     $.ajax({
-        url:"http://localhost:8080/api/Gama/save",
+        url:"http://150.230.78.93:8080/api/Gama/save",
         type:"POST",
         datatype:"JSON",
         contentType: "application/json; charset=utf-8",
@@ -51,7 +51,7 @@ function putGama(idBotonActualizar){
     };
     
     $.ajax({
-        url:"http://localhost:8080/api/Gama/update",
+        url:"http://150.230.78.93:8080/api/Gama/update",
         type:"PUT",
         datatype:"JSON",
         contentType: "application/json",
@@ -90,7 +90,7 @@ function deleteGama(idBoton){
             id:idBoton
         };
         $.ajax({
-            url:"http://localhost:8080/api/Gama/"+idBoton,
+            url:"http://150.230.78.93:8080/api/Gama/"+idBoton,
             type:"DELETE",
             datatype:"JSON",
             data:JSON.stringify(myData),
