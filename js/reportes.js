@@ -74,18 +74,33 @@ function pintarRespuestaReporteClientes(items){
         myTable+="</tr>";
 
     for(i=0; i<items.length; i++){
-        for(c=0; c < items[i].client.messages.length; c++){
+        if(items[i].client.messages.length == 0){
             myTable+="<tr>";
             myTable+="<td class='px-4 py-3'>"+items[i].client.name+"</td>";
             myTable+="<td class='px-4 py-3'>"+items[i].client.email+"</td>";
             myTable+="<td class='px-4 py-3'>"+items[i].client.age+"</td>";
-            myTable+="<td class='px-4 py-3'>"+items[i].client.messages[c].messageText+"</td>";
-            myTable+="<td class='px-4 py-3'>"+items[i].client.messages[c].car.name+"</td>";
-            myTable+="<td class='px-4 py-3'>"+items[i].client.messages[c].car.brand+"</td>";
-            myTable+="<td class='px-4 py-3'>"+items[i].client.messages[c].car.year+"</td>";
-            myTable+="<td class='px-4 py-3'>"+items[i].client.messages[c].car.description+"</td>";
-            myTable+="<td class='px-4 py-3'>"+items[i].client.messages[c].car.gama.name+"</td>";
+            myTable+="<td class='px-4 py-3'></td>";
+            myTable+="<td class='px-4 py-3'></td>";
+            myTable+="<td class='px-4 py-3'></td>";
+            myTable+="<td class='px-4 py-3'></td>";
+            myTable+="<td class='px-4 py-3'></td>";
+            myTable+="<td class='px-4 py-3'></td>";
             myTable+="</tr>";
+        }
+        else{
+            for(c=0; c < items[i].client.messages.length; c++){
+                myTable+="<tr>";
+                myTable+="<td class='px-4 py-3'>"+items[i].client.name+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].client.email+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].client.age+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].client.messages[c].messageText+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].client.messages[c].car.name+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].client.messages[c].car.brand+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].client.messages[c].car.year+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].client.messages[c].car.description+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].client.messages[c].car.gama.name+"</td>";
+                myTable+="</tr>";
+            }
         }
     }
     myTable+="</table>";
@@ -111,7 +126,7 @@ function pintarRespuestaReporteFechas(items){
         myTable+="</tr>";
 
     for(i=0; i<items.length; i++){
-        for(c=0; c < items[i].car.messages.length; c++){
+        if(items[i].car.messages.length == 0){
             myTable+="<tr>";
             myTable+="<td class='px-4 py-3'>"+items[i].client.name+"</td>";
             myTable+="<td class='px-4 py-3'>"+items[i].client.email+"</td>";
@@ -124,8 +139,26 @@ function pintarRespuestaReporteFechas(items){
             myTable+="<td class='px-4 py-3'>"+items[i].car.year+"</td>";
             myTable+="<td class='px-4 py-3'>"+items[i].car.description+"</td>";
             myTable+="<td class='px-4 py-3'>"+items[i].car.gama.name+"</td>";
-            myTable+="<td class='px-4 py-3'>"+items[i].car.messages[c].messageText+"</td>";
+            myTable+="<td class='px-4 py-3'></td>";
             myTable+="</tr>";
+        }
+        else{
+            for(c=0; c < items[i].car.messages.length; c++){
+                myTable+="<tr>";
+                myTable+="<td class='px-4 py-3'>"+items[i].client.name+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].client.email+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].client.age+"</td>";
+                myTable+="<td class='px-4 py-3'>"+new Date(items[i].startDate).toISOString().split("T")[0]+"</td>";
+                myTable+="<td class='px-4 py-3'>"+new Date(items[i].devolutionDate).toISOString().split("T")[0]+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].status+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].car.name+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].car.brand+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].car.year+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].car.description+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].car.gama.name+"</td>";
+                myTable+="<td class='px-4 py-3'>"+items[i].car.messages[c].messageText+"</td>";
+                myTable+="</tr>";
+            }
         }
     }
     myTable+="</table>";
